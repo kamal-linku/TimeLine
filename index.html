@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kamal ❤️ Sioli - Our Timeline</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(to bottom, #ffe6f2, #ffe9f8, #ffdef4);
+            color: #d63384;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #ff8fcf, #ffb3dd);
+            box-shadow: 0 6px 18px rgba(255, 100, 160, 0.3);
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            animation: fadeDown 1s ease;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* TIMELINE */
+        .timeline {
+            width: 90%;
+            max-width: 780px;
+            margin: 60px auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            height: 100%;
+            width: 6px;
+            background: linear-gradient(#ff66b3, #ff99cc);
+            border-radius: 4px;
+            animation: glowLine 2s infinite alternate ease-in-out;
+        }
+
+        @keyframes glowLine {
+            from { box-shadow: 0 0 10px #ff7ac4; }
+            to { box-shadow: 0 0 20px #ff1493; }
+        }
+
+        .event {
+            background: white;
+            padding: 25px;
+            border-radius: 22px;
+            width: 70%;
+            position: relative;
+            margin-bottom: 60px;
+            box-shadow: 0 6px 18px rgba(255, 150, 200, 0.35);
+            border: 3px solid rgba(255, 150, 200, 0.2);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .event.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .event:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 28px rgba(255, 120, 170, 0.4);
+        }
+
+        .left { float: left; clear: both; transform: translateX(-12%); }
+        .right { float: right; clear: both; transform: translateX(12%); }
+
+        .event h2 {
+            color: #ff2d8b;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        /* IMAGE FRAME IN TIMELINE */
+        .event .framed {
+            width: 85%;
+            display: block;
+            margin: 15px auto 5px;
+            border-radius: 20px;
+            padding: 10px;
+            background: linear-gradient(135deg, #ffc8eb, #c8eaff);
+            box-shadow: 0px 10px 22px rgba(255, 170, 200, 0.35);
+            transition: 0.3s;
+        }
+
+        .event .framed:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* ===========================
+           HER CUTEST PICS SECTION
+           =========================== */
+        .cute-section {
+            text-align: center;
+            margin-top: 120px;
+            padding-bottom: 100px;
+        }
+
+        .cute-section h2 {
+            font-size: 36px;
+            font-weight: 900;
+            color: #ff2d8b;
+            margin-bottom: 45px;
+            text-shadow: 0 4px 14px rgba(255, 60, 140, 0.45);
+            animation: glowText 2s infinite alternate ease-in-out;
+        }
+
+        @keyframes glowText {
+            from { text-shadow: 0 0 14px #ff66b3; }
+            to { text-shadow: 0 0 25px #ff2d8b; }
+        }
+
+        .cute-photos {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            flex-wrap: wrap;
+        }
+
+        .cute-box {
+            width: 260px;
+            height: 340px;
+            border-radius: 26px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 80, 150, 0.35);
+            box-shadow:
+                0 15px 35px rgba(255, 150, 200, 0.4),
+                0 15px 35px rgba(150, 200, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: floatBox 4.5s ease-in-out infinite;
+        }
+
+        @keyframes floatBox {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        /* Soft Animated Hearts */
+        .cute-box::before {
+            content: "❤";
+            font-size: 48px;
+            color: rgba(255, 80, 150, 0.28);
+            position: absolute;
+            top: -18px;
+            right: -16px;
+            animation: rotateHeart 5s linear infinite;
+        }
+
+        @keyframes rotateHeart {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cute-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        /* Hover effect */
+        .cute-box:hover img {
+            transform: scale(1.12) rotate(1deg);
+            box-shadow: 0 12px 35px rgba(255, 80, 150, 0.55);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 1.3rem;
+            margin-top: 40px;
+            color: #b30059;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Kamal ❤️ Sioli</h1>
+        <p>Our Cute Love Timeline</p>
+    </header>
+
+    <div class="timeline">
+
+        <div class="event left">
+            <h2>✨ When We First Knew Each Other</h2>
+            <p><strong>Date:</strong> 27 September 2021</p>
+            <p>The day when I followed her on instagram and after that she texted me first and we started chatting daily. Latter on I realised that i have feelings for her and she have feelings for me too. 💖</p>
+        </div>
+
+        <div class="event left">
+            <h2>🌸 Relationship Started</h2>
+            <p><strong>Date:</strong> 7 November 2021</p>
+            <p>The day we started our beautifull journey. ❤️</p>
+        </div>
+
+        <div class="event right">
+            <h2>💗 First Meet-Up</h2>
+            <p><strong>Date:</strong> 5 October 2025</p>
+            <p>The moment we finally met. That day is so precious for us because we met after 4yrs of wait. After meeting that day we really can't believe each other that we reaaly met. That's a unforgatable memory for us. 💕</p>
+        </div>
+
+        <div class="event left">
+            <h2>📸 Our First Photo</h2>
+            <p>This picture means the world to me because it reminds me how cute and lovely you are. 💕</p>
+            <img class="framed" src="WhatsApp Image 2025-11-20 at 06.41.30_1078a099.jpg" />
+        </div>
+
+        <div class="event right">
+            <h2>📸 Special Moments </h2>
+            <p></p>
+            <img class="framed" src="WhatsApp Image 2025-11-20 at 06.41.30_07530988.jpg" />
+        </div>
+
+        <div class="event left">
+            <h2>📸 Special Moments </h2>
+            <p></p>
+            <img class="framed" src="WhatsApp Image 2025-11-20 at 06.41.30_f2bcf286.jpg" />
+        </div>
+
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <!-- CUTE SECTION -->
+    <section class="cute-section">
+        <h2>💗 Her Cutest Pics 💗</h2>
+
+        <div class="cute-photos">
+
+            <div class="cute-box">
+                <img src="WhatsApp Image 2025-11-20 at 08.07.46_5b055274.jpg">
+            </div>
+
+            <div class="cute-box">
+                <img src="WhatsApp Image 2025-11-20 at 08.07.46_879f8bc0.jpg">
+            </div>
+
+            <div class="cute-box">
+                <img src="WhatsApp Image 2025-11-20 at 08.07.46_fe18686f.jpg">
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        Made with ❤️ by Kamal for Sioli
+    </footer>
+
+    <script>
+        function revealOnScroll() {
+            const events = document.querySelectorAll('.event');
+            const trigger = window.innerHeight * 0.85;
+            events.forEach(event => {
+                const boxTop = event.getBoundingClientRect().top;
+                if (boxTop < trigger) event.classList.add('reveal');
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.onload = revealOnScroll;
+    </script>
+
+</body>
+</html>
